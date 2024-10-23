@@ -3,8 +3,6 @@ import os
 import concurrent.futures
 import json
 
-UserBasicPath = os.path.expanduser("~")
-
 DatabasePath  = ""      # Your database path (only "desktop/folder" for example)
 DatabaseDir   = "false" # Put 'true' if you want to scan every files in the database path.
 
@@ -82,9 +80,9 @@ def Querooze():
     print(Banner)
     
     if DatabaseDir == "false":
-        DatabaseInput = input(f" >{Vio}•{RESET}< {RosCl}Veuillez entrer le nom du fichier que vous voulez traiter:{RESET} ")
+        DatabaseInput = input(f" >{Vio}•{RESET}< {RosCl}Enter name of file you want to process:{RESET} ")
     
-    SearchInput = input(f" >{Vio}•{RESET}< {RosCl}Veuillez entrer l'information que vous voulez chercher:{RESET} ")
+    SearchInput = input(f" >{Vio}•{RESET}< {RosCl}Enter information you want to search for:{RESET} ")
 
     def LookDatabase(Path, SearchInput):
         UserPattern = re.compile(rf'{re.escape(SearchInput)}', re.IGNORECASE)
@@ -131,7 +129,7 @@ def Querooze():
     if DatabaseInput.lower() == "true":
         Path = DatabasePath
     else:
-        Path = os.path.join(UserBasicPath, DatabasePath, f'{DatabaseInput}')
+        Path = os.path.join(DatabasePath, f'{DatabaseInput}')
 
     Matches = LookDatabase(Path, SearchInput)
 
