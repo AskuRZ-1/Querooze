@@ -3,7 +3,7 @@ import os
 import concurrent.futures
 import json
 
-DatabasePath  = ""      # Your database path (only "desktop/folder" for example)
+DatabasePath  = r""     # Your database path (only "desktop/folder" for example)
 DatabaseDir   = "false" # Put 'true' if you want to scan every files in the database path.
 
 RESET="\033[0m"
