@@ -3,7 +3,7 @@ import os
 import concurrent
 import json
 
-UserBasicPath = os.getcwd("~")
+UserBasicPath = os.path.expanduser("~")
 
 DatabasePath  = ""      # Your database path (only "desktop/folder" for example)
 DatabaseDir   = "false" # Put 'true' if you want to scan every files in the database path.
