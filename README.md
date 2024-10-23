@@ -1,2 +1,1 @@
-# Querooze
-A search database tool
+# 🔎 Querooze
