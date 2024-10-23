@@ -1,6 +1,6 @@
 import re
 import os
-import concurrent
+import concurrent.futures
 import json
 
 UserBasicPath = os.path.expanduser("~")
