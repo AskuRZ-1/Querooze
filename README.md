@@ -19,13 +19,10 @@ No dependencies are needed to use Querooze. You just need to have Python 3.11 in
 3. Run the program: `python Querooze.py`
 
 ## Contributors
-This project was developed by [AskuRZ](https://github.com/AskuRZ-1).
+This project was developed by [AskuRZ](https://github.com/AskuRZ-1) 👤
 
 ## Help and Support
 If you have any questions or need assistance, feel free to open an issue in the GitHub repository. We're here to help! 🤝
-
-## Acknowledgments
-Thank you for choosing Querooze! We hope it will be useful to you! 🌟
 
 ---
 
