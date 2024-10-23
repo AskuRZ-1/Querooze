@@ -1,35 +1,35 @@
 # 🔎 Querooze
 
-Bienvenue dans **Querooze**, votre outil de recherche ultime pour explorer des bases de données facilement et efficacement! 🚀
+Welcome to **Querooze**, your ultimate tool for searching databases easily and efficiently! 🚀
 
-## À propos de Querooze
-Querooze est un programme Python qui permet de rechercher dans des bases de données de manière rapide et intuitive. Que vous soyez un développeur, un analyste de données, ou simplement curieux, Querooze est fait pour vous! 🎉
+## About Querooze
+Querooze is a Python program that allows you to search databases quickly and intuitively. Whether you are a developer, a data analyst, or simply curious, Querooze is made for you! 🎉
 
-### Fonctionnalités
-- 🔍 **Recherche rapide** : Trouvez ce que vous cherchez en un clin d'œil!
-- 📊 **Facilité d'utilisation** : Une interface simple pour une navigation fluide.
-- 🐍 **Codé en Python 3.11** : Profitez des dernières fonctionnalités du langage.
+### Features
+- 🔍 **Fast Search**: Find what you're looking for in the blink of an eye!
+- 📊 **User-Friendly**: A simple interface for smooth navigation.
+- 🐍 **Built with Python 3.11**: Enjoy the latest features of the language.
 
 ## Installation
-Aucune dépendance n'est nécessaire pour utiliser Querooze. Il vous suffit d'avoir Python 3.11 installé sur votre machine. 👍
+No dependencies are needed to use Querooze. You just need to have Python 3.11 installed on your machine. 👍
 
-## Comment utiliser
-1. Clonez le dépôt : `git clone https://github.com/AskuRZ-1/Querooze.git`
-2. Accédez au répertoire : `cd Querooze`
-3. Exécutez le programme : `python querooze.py`
+## How to Use
+1. Clone the repository: `git clone https://github.com/AskuRZ-1/Querooze.git`
+2. Navigate to the directory: `cd Querooze`
+3. Run the program: `python querooze.py`
 
-## Contributeurs
-Ce projet a été développé par [AskuRZ](https://github.com/AskuRZ-1). Un grand merci à lui pour son travail acharné! 👏
+## Contributors
+This project was developed by [AskuRZ](https://github.com/AskuRZ-1). A big thank you to him for his hard work! 👏
 
-## Aide et support
-Si vous avez des questions ou besoin d'aide, n'hésitez pas à ouvrir une issue sur le dépôt GitHub. Nous sommes là pour vous aider! 🤝
+## Help and Support
+If you have any questions or need assistance, feel free to open an issue in the GitHub repository. We're here to help! 🤝
 
-## Remerciements
-Merci d'avoir choisi Querooze! Nous espérons qu'il vous sera utile! 🌟
+## Acknowledgments
+Thank you for choosing Querooze! We hope it will be useful to you! 🌟
 
 ---
 
 ```markdown
-Pour plus d'informations, consultez notre dépôt GitHub : [Querooze sur GitHub](https://github.com/AskuRZ-1)
+For more information, check out our GitHub repository: [Querooze on GitHub](https://github.com/AskuRZ-1)
 ```
 
