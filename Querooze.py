@@ -3,8 +3,8 @@ import os
 import concurrent.futures
 import json
 
-DatabasePath  = r""     # Your database path (only "desktop/folder" for example)
-DatabaseDir   = "false" # Put 'true' if you want to scan every files in the database path.
+DatabasePath  = r""    # Your database path (only "desktop/folder" for example)
+DatabaseDir   = "true" # Put 'true' if you want to scan every files in the database path.
 
 RESET="\033[0m"
 
@@ -93,20 +93,29 @@ def Querooze():
         def SearchInFile(Filepath):
             Filename = os.path.basename(Filepath)
 
-            with open(Filepath, 'r', errors='ignore') as PlainFile:
-                Lines = PlainFile.readlines()
+            try:
+                with open(Filepath, 'r', errors='ignore') as PlainFile:
+                    Lines = PlainFile.readlines()
+                    
+            except Exception as e:
+                return []
 
             Matches = []
             for Num, Line in enumerate(Lines, 1):
+                # print(f"Debug: line {Num}: {Line.strip()}")  # Debug msg
+
                 if UserPattern.search(Line):
                     print(f"  {Vio}└• {Ros}Match found in file: {RosCl}{Filepath} {Ros}on line {Vio}{Num}{RESET}")
                     try:
                         JsonData = json.loads(Line)
                         Matches.append((JsonData, Filename, Num))
+
                     except json.JSONDecodeError:
                         Parts = [Part.strip() for Part in Line.split(',')]
                         Matches.append((Parts, Filename, Num))
+
             return Matches
+
 
         AllMatches = []
 
@@ -129,7 +138,7 @@ def Querooze():
 
         return AllMatches
 
-    if DatabaseInput.lower() == "true":
+    if DatabaseDir.lower() == "true":
         Path = DatabasePath
     else:
         Path = os.path.join(DatabasePath, f'{DatabaseInput}')
