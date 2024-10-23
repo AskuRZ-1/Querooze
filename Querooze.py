@@ -179,8 +179,6 @@ while True:
     if input("\n   Want to continue ? (y/n): ") == "y":
         os.system("cls")
         continue
-        
-
     
     else:
         break
