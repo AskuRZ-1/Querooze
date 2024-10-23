@@ -78,10 +78,13 @@ def PrintData(Data, Filename, Line):
 
 def Querooze():
     print(Banner)
-    
+
     if DatabaseDir == "false":
-        DatabaseInput = input(f" >{Vio}•{RESET}< {RosCl}Enter name of file you want to process:{RESET} ")
-    
+        DatabaseInput = input(f" >{Vio}•{RESET}< {RosCl}Enter name of file you want to process (without extension):{RESET} ")
+        if not DatabaseInput.endswith('.txt'):
+            DatabaseInput += '.txt'
+
+
     SearchInput = input(f" >{Vio}•{RESET}< {RosCl}Enter information you want to search for:{RESET} ")
 
     def LookDatabase(Path, SearchInput):
