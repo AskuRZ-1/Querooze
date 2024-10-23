@@ -3,8 +3,8 @@ import os
 import concurrent.futures
 import json
 
-DatabasePath  = r""    # Your database path (only "desktop/folder" for example)
-DatabaseDir   = "true" # Put 'true' if you want to scan every files in the database path.
+DatabasePath  = r""     # Your database path (only "desktop/folder" for example)
+DatabaseDir   = "false" # Put 'true' if you want to scan every files in the database path.
 
 RESET="\033[0m"
 
@@ -40,36 +40,19 @@ def PrintData(Data, Filename, Line):
     if isinstance(Data, dict):
         print(f'  {Vio}├• {Ros}File: {RosCl}{Filename} {Ros}Line: {Vio}{Line}{RESET}')
 
-        for Key in ["username", "email", "emailConfirmed", "accountType", "subStatus", "createdOn", "createdAt", "lastActive", "firstName", "lastName", "address1", "city", "zipCode", "state", "country", "phoneNumber"]:
-            Value = Data.get(Key, "N/A")
-            DataType = DetectDataType(Value)
-            print(f'  {Vio}├• {Ros}{Key.capitalize()}: {RosCl}{Value} ({DataType}){RESET}')
+        username = Data.get("username", "N/A")
+        email = Data.get("email", "N/A")
+        ip = Data.get("ip", "N/A")
 
-        Events = Data.get("events", [])
+        print(f'  {Vio}├• {Ros}Username: {RosCl}{username} ({DetectDataType(username)}){RESET}')
+        print(f'  {Vio}├• {Ros}Email: {RosCl}{email} ({DetectDataType(email)}){RESET}')
+        print(f'  {Vio}├• {Ros}IP: {RosCl}{ip} ({DetectDataType(ip)}){RESET}')
 
-        if Events:
-            print(f'  {Vio}├• {Ros}Events:{RESET}')
-
-            for Event in Events:
-                EventTime = Event[0]
-                EventType = Event[2]
-                EventIP = Event[4] if len(Event) > 4 else "N/A"
-                print(f'  {Vio}│   ├• {Ros}Date: {RosCl}{EventTime}{RESET} | Type: {RosCl}{EventType}{RESET} | IP: {RosCl}{EventIP}{RESET}')
-                if len(Event) > 5:
-                    AdditionalInfo = Event[5:]
-                    print(f'  {Vio}│   └• {Ros}Additional Info: {RosCl}{", ".join(AdditionalInfo)}{RESET}')
-        else:
-            print(f'  {Vio}├• {Ros}No Events Found{RESET}')
-
-        print(f'  {Vio}└────────── Additional Info ──────────{RESET}')
-        AdditionalFields = {Key: Value for Key, Value in Data.items() if Key not in ["_id", "uuid", "events"]}
-
-        if AdditionalFields:
-            for Key, Value in AdditionalFields.items():
-                print(f'  {Vio}├• {Ros}{Key}: {RosCl}{Value}{RESET}')
-        else:
-            print(f'  {Vio}├• {Ros}No Additional Info{RESET}')
-
+        print(f'  {Vio}├─ Unknown Data ─────────────{RESET}')
+        AdditionalFields = {Key: Value for Key, Value in Data.items() if Key not in ["username", "email", "ip", "_id", "uuid", "events"]}
+        for Key, Value in AdditionalFields.items():
+            print(f'  {Vio}├• {Ros}{Key}: {RosCl}{Value}{RESET}')
+        
         print(f"  └\n")
 
     else:
@@ -102,20 +85,19 @@ def Querooze():
 
             Matches = []
             for Num, Line in enumerate(Lines, 1):
-                # print(f"Debug: line {Num}: {Line.strip()}")  # Debug msg
 
                 if UserPattern.search(Line):
                     print(f"  {Vio}└• {Ros}Match found in file: {RosCl}{Filepath} {Ros}on line {Vio}{Num}{RESET}")
+
                     try:
                         JsonData = json.loads(Line)
                         Matches.append((JsonData, Filename, Num))
-
+                        
                     except json.JSONDecodeError:
                         Parts = [Part.strip() for Part in Line.split(',')]
                         Matches.append((Parts, Filename, Num))
 
             return Matches
-
 
         AllMatches = []
 
