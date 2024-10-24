@@ -177,7 +177,7 @@ while True:
     Querooze()
 
     if input("\n   Want to continue ? (y/n): ") == "y":
-        os.system("cls")
+        os.system("cls" if os.name == "nt" else "clear")
         continue
     
     else:
