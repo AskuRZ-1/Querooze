@@ -15,7 +15,9 @@ No dependencies are needed to use Querooze. You just need to have Python 3.11 in
 
 ## How to Use
 1. Clone the repository:
-   ```git clone https://github.com/AskuRZ-1/Querooze.git```
+   ```markdown
+   git clone https://github.com/AskuRZ-1/Querooze.git
+   ```
 4. Navigate to the directory: `cd Querooze`
 5. Run the program: `python Querooze.py`
 
