@@ -14,9 +14,9 @@ Querooze is a Python program that allows you to search databases quickly and int
 No dependencies are needed to use Querooze. You just need to have Python 3.11 installed on your machine. 👍
 
 ## How to Use
-1. Clone the repository: `git clone https://github.com/AskuRZ-1/Querooze.git`
-2. Navigate to the directory: `cd Querooze`
-3. Run the program: `python Querooze.py`
+1. Clone the repository: ```bash git clone https://github.com/AskuRZ-1/Querooze.git```
+4. Navigate to the directory: `cd Querooze`
+5. Run the program: `python Querooze.py`
 
 ## Contributors
 This project was developed by [AskuRZ](https://github.com/AskuRZ-1) 👤
