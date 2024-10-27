@@ -137,7 +137,7 @@ def Querooze():
                         print(f"  {Vio}└• {Ros}No Data found in {Root}{Reset}")
 
                     else:
-                        Futures = [Executor.submit(SearchInFile, os.path.join(Root, File)) for File in Files if File.endswith('.txt')]
+                        Futures = [Executor.submit(SearchInFile, os.path.join(Root, File)) for File in Files]
                         for Future in concurrent.futures.as_completed(Futures):
                             Result = Future.result()
                             if Result:
